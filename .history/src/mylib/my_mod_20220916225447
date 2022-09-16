@@ -1,5 +1,0 @@
-mod my_mod{
-    pufn hello(){
-        println!("{}","hello");
-    }
-}

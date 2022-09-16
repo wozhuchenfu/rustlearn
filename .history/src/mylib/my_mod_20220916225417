@@ -1,5 +1,0 @@
-mod my_mod{
-    fn hello(){
-        println!
-    }
-}
