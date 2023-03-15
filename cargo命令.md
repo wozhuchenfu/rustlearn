@@ -2,7 +2,7 @@ cargo new [packagename] 创建新cargo project
 cargo init 在目录文件下执行，初始化cargo project
 cargo check 检验代码
 cargo run 运行代码
-cargo build 命令阻塞住时删除.cargo目录下的.package-cache文件
+cargo build 命令阻塞住时删除$HOME/.cargo目录下的.package-cache文件
 
 在.cargo目录下创建config文件配置国内crate.io源
 
