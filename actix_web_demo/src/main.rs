@@ -1,3 +1,5 @@
+extern crate actix_web;
+
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
 #[get("/")]
