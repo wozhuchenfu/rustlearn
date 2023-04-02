@@ -6,7 +6,20 @@ use std::fs;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::TcpListener as tokTcpListener;
 
+mod rust_unsafe;
 mod rust_async;
+
+fn largest<T:PartialOrd+Copy>(arr:&[T])-> T {
+    let mut largest = &arr[0];
+    for ele in arr {
+        if largest < ele {
+            largest = ele;
+        }
+    }
+    *largest
+}
+
+
 fn handle_connection(mut stream: TcpStream){
     let mut buffer = [0;1024];
     stream.read(&mut buffer).unwrap();
