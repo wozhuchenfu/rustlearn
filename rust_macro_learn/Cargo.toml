@@ -1,0 +1,9 @@
+[package]
+name = "rust_macro_learn"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rust_proc_macro={path="../rust_macro_learn/rust_proc_macro"}

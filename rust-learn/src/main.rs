@@ -1,4 +1,5 @@
 extern crate futures;
+extern crate proc_macro;
 
 use std::net::{TcpListener, TcpStream};
 use std::io::{Read, Write};
@@ -8,6 +9,7 @@ use tokio::net::TcpListener as tokTcpListener;
 
 mod rust_unsafe;
 mod rust_async;
+mod rust_macro;
 
 fn largest<T:PartialOrd+Copy>(arr:&[T])-> T {
     let mut largest = &arr[0];
