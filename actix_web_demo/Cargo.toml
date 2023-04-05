@@ -25,3 +25,4 @@ sqlx = { version = "0.6", features = [
 postgres = "0.19.4"
 mobc-redis = "0.8.0"
 mobc = "0.8.1"
+anyhow = "1.0.70"

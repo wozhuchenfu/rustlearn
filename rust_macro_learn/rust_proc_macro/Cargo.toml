@@ -7,6 +7,9 @@ edition = "2021"
 [lib]
 proc-macro=true
 [dependencies]
-syn="2.0.13"
-quote="1.0.26"
+syn={ version = "1.0", features = ["full","extra-traits"] }
+quote="1.0"
 proc-macro2="1.0.56"
+#proc_macro2：是对proc_macro的封装，是由 Rust 官方提供的。
+#syn：是基于proc_macro2中暴露的 TokenStream API 来生成 AST，提供方便的操作AST的接口。
+#quote：配合syn，将AST转回TokenSteam，回归到普通文本代码生成的TokenSteam中。

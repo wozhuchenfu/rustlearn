@@ -9,8 +9,48 @@ use rust_proc_macro;
 2、过程宏必须定义定义在lib目标中，不能定义在bin目标中
 
 */
+/*#[derive(rust_proc_macro::Builder)]
+struct Command {
+    // ...
+}*/
+
+/*#[rust_proc_macro::sorted]
+enum Letter {
+    A,
+    B,
+    C,
+    // ...
+}*/
+
+// 属性过程宏：空属性
+#[rust_proc_macro::custom_proc_macro_attribute]
+fn custom_proc_macro_attribute_fn() {
+    println!("this is custom_proc_macro_attribute_fn()");
+}
+
+// 属性过程宏：自定义属性
+#[rust_proc_macro::custom_proc_macro_attribute("this is custom_proc_macro_attribute")]
+fn custom_proc_macro_attribute_fn_ha_attribute() {
+    println!("this is custom_proc_macro_attribute_fn()");
+}
+
+#[derive(rust_proc_macro::CuctomProcMacroDerive)]
+struct Student;
 
 fn main() {
+    rust_proc_macro::custom_proc_macro!();
+    let a = rust_proc_macro::custom_proc_macro!(123);
+    println!("{:?}",a);
+
+    // 派生宏中派生的新方法，可以直接使用。
+    let derive_fn = cuctom_proc_macro_derive_fn();
+    println!("cuctom_proc_macro_derive_fn return:{}",derive_fn);
+
+    custom_proc_macro_attribute_fn();
+    custom_proc_macro_attribute_fn_ha_attribute();
+    /*rust_proc_macro::seq! { n in 0..10 {
+            /* ... */
+        }}*/
     let macro21 = rust_proc_macro::macro2!("hello");
     println!("{}",macro21);
     println!("Hello, world!");
