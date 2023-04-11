@@ -12,6 +12,7 @@ members=["actix_web_demo",
     "rust-micro",
     "rust-learn",
     "rust_macro_learn",
+    "rocket_web_learn",
 ]
 
 [profile.dev]

@@ -10,6 +10,7 @@ use tokio::net::TcpListener as tokTcpListener;
 mod rust_unsafe;
 mod rust_async;
 mod rust_macro;
+mod rust_algorithm;
 
 fn largest<T:PartialOrd+Copy>(arr:&[T])-> T {
     let mut largest = &arr[0];

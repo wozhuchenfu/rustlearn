@@ -7,3 +7,7 @@ edition = "2021"
 
 [dependencies]
 rust_proc_macro={path="../rust_macro_learn/rust_proc_macro"}
+bean_check = { path = "bean_check"}
+bean_check_lib = { path = "bean_check_lib"}
+regex = "1"
+md-5 = "0.10.5"

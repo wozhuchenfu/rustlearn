@@ -24,7 +24,7 @@ pub fn macro2(input:TokenStream)->TokenStream{
 #[proc_macro_attribute]
 pub fn custom_proc_macro_attribute(attr: TokenStream, item: TokenStream) -> TokenStream {
     // 使用parse_macro_input!宏将attr转换为语法树
-    eprintln!("{:#?}", parse_macro_input!(attr as AttributeArgs));
+    eprintln!("custom_proc_macro_attribute： {:#?}", parse_macro_input!(attr as AttributeArgs));
     // 转换成语法树
     let body_ast = parse_macro_input!(item as Item);
     // eprintln!("{:#?}", body_ast);
@@ -37,6 +37,12 @@ pub fn custom_proc_macro_attribute(attr: TokenStream, item: TokenStream) -> Toke
             eprintln!("attrs:{:#?}", o.attrs); // 特性
             eprintln!("sig:{:#?}", o.sig); // 方法签名
             eprintln!("block:{:#?}", o.block); // 方法体
+            let x = o.block.clone();
+            let iter = x.stmts.iter();
+            for sm in iter.enumerate() {
+                let x1 = sm.1;
+            }
+
         }
         _ => {}
     }
