@@ -40,11 +40,51 @@ where T:PartialOrd+Debug+Copy{
     res
 }
 
+fn merge<T>(left:Vec<T>,right:Vec<T>)->Vec<T>
+where T:Ord+Copy{
+    let mut i:usize = 0;
+    let mut j:usize = 0;
+    let mut res:Vec<T> = Vec::with_capacity(left.len()+right.len());
+    while i< left.len() && j<right.len() {
+        if left[i] < right[j]{
+            res.push(left[i]);
+            i+=1;
+        }else{
+            res.push(right[j]);
+            j+=1;
+        }
+    }
+    while i<left.len() {
+        res.push(left[i]);
+        i+=1;
+    }
+    while j<right.len() {
+        res.push(right[j]);
+        j+=1;
+    }
+    res
+}
+
+fn merge_sort<T>(arr:Vec<T>)->Vec<T>
+where T:Ord+Copy{
+    if arr.len() == 1 {
+        return arr;
+    }
+    let a = arr[0..arr.len()/2].to_vec();
+    let b = arr[arr.len()/2..arr.len()].to_vec();
+    merge(merge_sort(a),merge_sort(b))
+}
+
 #[cfg(test)]
 mod test{
     use super::*;
     #[test]
     fn test(){
+        let arr1 = vec![1,2,3,5];
+        let arr2 = vec![4,6,7,8];
+        let vec3 = merge_sort(arr1);
+        println!("{:?}",vec3);
+
         let a:Vec<i32> = Vec::with_capacity(9);
         println!("{:?}",a.len());
         let mut arr = vec![6,4,5,8,3];
