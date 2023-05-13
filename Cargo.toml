@@ -13,6 +13,7 @@ members=["actix_web_demo",
     "rust-learn",
     "rust_macro_learn",
     "rocket_web_learn",
+    "axum_web",
 ]
 
 [profile.dev]
