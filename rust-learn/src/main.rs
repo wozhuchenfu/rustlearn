@@ -52,11 +52,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         let (mut socket, _) = listener.accept().await?;
 
         tokio::spawn(async move {
-            let mut buf = [0; 1024];
+            let mut buf = String::new();
 
+            let (mut read,mut write) = socket.split();
             // In a loop, read data from the socket and write the data back.
             loop {
-                let n = match socket.read(&mut buf).await {
+                let n = match read.read_to_string(&mut buf).await {
                     // socket closed
                     Ok(n) if n == 0 => return,
                     Ok(n) => n,
@@ -65,9 +66,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                         return;
                     }
                 };
-                println!("buf {}",String::from_utf8(buf.to_vec()).unwrap());
+                println!("buf {}",buf);
                 // Write the data back
-                if let Err(e) = socket.write_all(b"hello").await {
+                if let Err(e) = write.write_all(b"hello").await {
                     println!("failed to write to socket; err = {:?}", e);
                     return;
                 }
@@ -98,5 +99,23 @@ fn main1() {
     let team_name = String::from("Blue");
     let score = scores.get(&team_name).copied().unwrap_or(0);
     println!("{}",score);
+}
+
+#[tokio::main]
+async fn main3() {
+    let listener = TcpListener::bind("127.0.0.1:8080").await.unwrap();
+    loop {
+        let (mut tcpStream,addr) = listener.accept().await.unwrap();
+        tokio::spawn(async move {
+            let (mut reader, mut writer) = tcpStream.split();
+            let mut content = String::new();
+            reader.read_to_string(&mut content).await;
+            println!("{}",content);
+            writer.write(b"hello").await;
+            writer.flush();
+        });
+
+
+    }
 }
 

@@ -2,7 +2,7 @@
 #[cfg(test)]
 mod test{
     use std::io::{Read, read_to_string, Write};
-    use std::net::{TcpListener, TcpStream};
+    use std::net::{Shutdown, TcpListener, TcpStream};
     use std::thread;
     use std::thread::Thread;
     use tokio::runtime;
@@ -60,14 +60,17 @@ mod test{
 
     }
 
+    #[test]
     fn client1(){
-        let mut stream = TcpStream::connect("127.0.0.1:8080").unwrap();
-        let mut buffer = Vec::new();
+        let mut stream = TcpStream::connect("127.0.0.1:8080").expect("connect failed");
+
+        let mut buffer = String::new();
         // read up to 10 bytes
-        let n = stream.read(&mut buffer);
-        let string = String::from_utf8(buffer).unwrap();
-        println!("The bytes: {:?}", string);
         stream.write(b"hello");
+        stream.flush();
+        stream.shutdown(Shutdown::Write);
+        let n = stream.read_to_string(&mut buffer);
+        println!("The bytes: {:?}", buffer);
     }
 
     fn client2(){
@@ -83,10 +86,10 @@ mod test{
     #[test]
     fn client_test(){
         let handle1 = thread::spawn(|| {client1()});
-        let handle2 = thread::spawn(|| {client2()});
+        // let handle2 = thread::spawn(|| {client2()});
         let mut handles = Vec::new();
         handles.push(handle1);
-        handles.push(handle2);
+        // handles.push(handle2);
         for handle in handles {
             handle.join();
         }
