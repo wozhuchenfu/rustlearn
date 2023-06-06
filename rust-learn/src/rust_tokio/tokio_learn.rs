@@ -29,14 +29,14 @@ mod test{
         loop {
             match listener.accept() {
                 Ok((mut _socket, addr)) => {
-                    println!("new client: {addr:?}");
+                    println!("new client: {:?}",addr);
                     _socket.write(b"server1 hello");
                     let mut buffer = [0; 10];
                     // read up to 10 bytes
                     let n = _socket.read(&mut buffer[..]).unwrap();
                     println!("server1 The bytes: {:?}", &buffer[0..n]);
                 },
-                Err(e) => println!("couldn't get client: {e:?}"),
+                Err(e) => println!("couldn't get client: {:?}",e),
             }
         }
 
@@ -47,14 +47,14 @@ mod test{
         loop {
             match listener.accept() {
                 Ok((mut _socket, addr)) => {
-                    println!("new client: {addr:?}");
+                    println!("new client: {:?}",addr);
                     _socket.write(b"server2 hello");
                     let mut buffer = [0; 10];
                     // read up to 10 bytes
                     let n = _socket.read(&mut buffer[..]).unwrap();
                     println!("server2 The bytes: {:?}", &buffer[0..n]);
                 },
-                Err(e) => println!("couldn't get client: {e:?}"),
+                Err(e) => println!("couldn't get client: {:?}",e),
             }
         }
 
