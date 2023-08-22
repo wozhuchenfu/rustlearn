@@ -6,7 +6,6 @@ use tokio::time::Duration;
 use std::thread;
 use futures::future::{BoxFuture, ok};
 use std::sync::mpsc::{SyncSender, sync_channel,Receiver};
-use std::time::Duration;
 
 
 pub struct TimeFuture{
