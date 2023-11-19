@@ -2,6 +2,7 @@
 learn rust demo
 学习资源：
 https://github.com/tyrchen/geektime-rust/tree/master
+https://mp.weixin.qq.com/s/I1-7U0ACosnxvtaplKYXIQ
 
 从零开始 用 Rust 语言写一个基于 RISC-V 架构的类 Unix 内核
 https://rcore-os.cn/rCore-Tutorial-Book-v3/
