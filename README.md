@@ -126,4 +126,11 @@ linker = "rust-lld"
 3). 构建
 
 cargo build --target x86_64-unknown-linux-musl
-
+#rust学习日记
+https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzkwMjI5MjA5MA==&scene=1&album_id=2075607640214126593&count=3#wechat_redirect
+#rust入门
+https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzU0MTg5MDMzOA==&scene=1&album_id=3187499705652690949&count=3#wechat_redirect
+#rusut进阶
+https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg5MDg4NTAzMg==&action=getalbum&album_id=3122274487372251145&scene=173&subscene=&sessionid=svr_d1b7bf56402&enterid=1703171241&from_msgid=2247484175&from_itemidx=1&count=3&nolastread=1#wechat_redirect
+#rust中级
+https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzkwMjI5MjA5MA==&scene=1&album_id=2529793839025405952&count=3#wechat_redirect
