@@ -134,3 +134,42 @@ https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzU0MTg5MDMzOA==&s
 https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg5MDg4NTAzMg==&action=getalbum&album_id=3122274487372251145&scene=173&subscene=&sessionid=svr_d1b7bf56402&enterid=1703171241&from_msgid=2247484175&from_itemidx=1&count=3&nolastread=1#wechat_redirect
 #rust中级
 https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzkwMjI5MjA5MA==&scene=1&album_id=2529793839025405952&count=3#wechat_redirect
+#LeetCode in Rust
+https://github.com/aylei/leetcode-rust
+#Rust 数据结构和算法
+https://github.com/QMHTMY/RustBook/tree/main/books
+#The Algorithms (Rust算法)
+https://github.com/TheAlgorithms/Rust
+#小争哥讲算法（包括 Rust）
+https://github.com/wangzheng0822/algo
+官方的 rust book https://doc.rust-lang.org/book/title-page.html
+官方 rust 死灵书 https://doc.rust-lang.org/nomicon/intro.html
+通过例子学 Rust https://rustwiki.org/zh-CN/rust-by-example/index.html
+官方 rustlings 小练习 https://rustlings.cool/
+Rust 语言圣经 https://course.rs/basic/intro.html
+Google 出的 Rust 教程 https://google.github.io/comprehensive-rust/welcome.html
+Rust 程序设计语言 https://kaisery.github.io/trpl-zh-cn/title-page.html
+Rust 原子操作和锁 https://marabos.nl/atomics/
+Rust 原子和锁—中文翻译 https://atomics.rs/about-book.html
+Awesome-rust rust 相关资料、第三方库列表 https://github.com/rust-unofficial/awesome-rust
+Learn Rust Easy 一本中文入门书 https://rustycab.github.io/LearnRustEasy/
+书籍、博客、视频
+《Rust 编程之道》
+《Rust 权威指南》
+《Rust 程序设计·第二版》
+《深入理解 Rust 并发编程》
+《Rust 实战》
+《The Rust Programming Language》
+《Rust For Rustaceans》
+《Programming Rust—Fast, Safe Systems Development》
+《Command-Line Rust》
+《Rust Crash Course》
+《Systems Programming Rust》
+《Rust Atomics and Locks》
+The Week in Rust https://this-week-in-rust.org/
+Rust 语言中文社区 https://rustcc.cn/
+
+
+
+
+
